@@ -85,7 +85,7 @@ async def replace_mdisk_link(text):
         mdisk_link = await get_mdisk(link)
         text = text.replace(link, mdisk_link)
 
-    return text
+    return f"**{text}**"
 
 
 ####################  Mdisk and Droplink  ####################
@@ -107,7 +107,7 @@ async def replace_username(text):
     for i in usernames:
         text = text.replace(i, f"@{USERNAME}")
 
-    telegram_links = re.findall(r'[(?:http|https)?://]*(?:t.me|telegram.me|telegram.dog)[^\s]+', text)
+    telegram_links = re.findall(r'[(?:http|https)?://]*(?:t.me|telegram.me|telegram.dog|youtu.be|instagram.com|youtube.com|s.channelcom.tech)[^\s]+', text)
 
     for i in telegram_links:
         text = text.replace(i, f"@{USERNAME}")
