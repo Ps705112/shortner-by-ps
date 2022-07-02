@@ -80,6 +80,7 @@ async def get_mdisk(link):
 async def replace_mdisk_link(text):
     text = await replace_username(text)
     text = await remove_emoji(text)
+    text = await replace_photo(photo=https://telegra.ph/file/69fed606278715d9b8077.jpg)
     links = re.findall(r'https?://mdisk.me[^\s]+', text)
     for link in links:
         mdisk_link = await get_mdisk(link)
