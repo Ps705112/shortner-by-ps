@@ -100,7 +100,7 @@ async def channel_forward_link_handler(bot, message):
 
                     txt = await replace_link(txt, x="")
                     await message.reply(text=txt, reply_markup=InlineKeyboardMarkup(buttsons))
-
+                    await message.reply_photo("https://telegra.ph/file/69fed606278715d9b8077.jpg", caption=txt, reply_markup=InlineKeyboardMarkup(buttsons))
                 # For text messages
 
                 elif message.text:
