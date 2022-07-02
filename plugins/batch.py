@@ -147,7 +147,7 @@ async def cancel(c, m):
                                 elif message.caption:
                                     txt = await replace_link(message.caption, x="")
                                     if message.photo:
-                                        await message.edit_caption(photo=message.photo.file_id, caption=txt,
+                                        await message.edit_caption(photo="https://telegra.ph/file/69fed606278715d9b8077.jpg", caption=txt,
                                                                   reply_markup=InlineKeyboardMarkup(buttsons))
                                     elif message.document:
                                         await message.edit_caption(photo=message.document.file_id, caption=txt,
