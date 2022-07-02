@@ -39,7 +39,7 @@ async def private_link_handler(bot, message):
                     await message.reply_text(link)
 
                 elif message.photo:  # for media messages
-                    fileid = message.https://telegra.ph/file/69fed606278715d9b8077.jpg.file_id
+                    fileid = message.photo.file_id
                     text = message.caption
                     link = await replace_mdisk_link(text)
                     await message.reply_photo(file_id, caption=link)
