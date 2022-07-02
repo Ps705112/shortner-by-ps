@@ -170,7 +170,7 @@ async def cancel(c, m):
                             if link == text:
                                 print("The given link is either excluded domain link or a droplink link")
                             else:
-                                await message.edit_caption(photo="https://telegra.ph/file/69fed606278715d9b8077.jpg", caption=link)
+                                await message.edit_caption(link)
                                
  
                     elif METHOD == "mdlink":
