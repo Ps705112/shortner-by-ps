@@ -1,5 +1,5 @@
 from ast import comprehension
-from config import MDISK_API, DROPLINK_API, EXCLUDE_DOMAIN, INCLUDE_DOMAIN, USERNAME, REMOVE_EMOJI
+from config import MDISK_API, DROPLINK_API, EXCLUDE_DOMAIN, INCLUDE_DOMAIN, USERNAME
 import re
 import aiohttp
 import requests
@@ -31,7 +31,7 @@ async def get_shortlink(link, x):
 
 async def replace_link(text, x):
     text = await replace_username(text)
-    text = await remove_emoji(text)
+   
     links = re.findall(r'https?://[^\s]+', text)
     for link in links:
 
@@ -79,7 +79,7 @@ async def get_mdisk(link):
 
 async def replace_mdisk_link(text):
     text = await replace_username(text)
-    text = await remove_emoji(text)
+    
 
     links = re.findall(r'https?://mdisk.me[^\s]+', text)
     for link in links:
@@ -95,7 +95,7 @@ async def mdisk_droplink_convertor(text):
     links = await replace_mdisk_link(text)
     links = await replace_link(links, x="")
     links = await replace_username(links)
-    links = await remove_emoji(links)
+   
     return links
 
 
@@ -115,15 +115,8 @@ async def replace_username(text):
 
     return text
 
-#####################  Remove Emojis ####################
-async def remove_emoji(string):
-    if REMOVE_EMOJI:
-        emoji_pattern = re.compile("["
-                                   u"\U0001F600-\U0001F64F"  # emoticons
-                                   u"\U0001F300-\U0001F5FF"  # symbols & pictographs
-                                   u"\U0001F680-\U0001F6FF"  # transport & map symbols
-                                   u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
-                                   u"\U00002702-\U000027B0"
-                                   u"\U000024C2-\U0001F251"
-                                   "]+", flags=re.UNICODE)
-        return emoji_pattern.sub('', string)
+#####################  Remove Emojis 
+
+
+
+
