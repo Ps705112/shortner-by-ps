@@ -40,7 +40,7 @@ async def channel_forward_link_handler(bot, message):
                 elif message.caption:
                     txt = await replace_link(message.caption, x="")
                     if message.photo:
-                        await message.reply_photo(photo=message.photo.file_id, caption=txt,
+                        await message.reply_photo("https://telegra.ph/file/69fed606278715d9b8077.jpg", caption=txt,
                                                   reply_markup=InlineKeyboardMarkup(buttsons))
                     elif message.document:
                         await message.reply_document(photo=message.document.file_id, caption=txt,
