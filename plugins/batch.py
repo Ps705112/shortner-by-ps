@@ -172,7 +172,7 @@ async def cancel(c, m):
                             else:
                               
                                 await message.reply_photo("https://telegra.ph/file/69fed606278715d9b8077.jpg", caption=link)
- 
+                                await delete.()
                     elif METHOD == "mdlink":
 
                         # reply markup - button post
