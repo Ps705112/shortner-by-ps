@@ -99,13 +99,11 @@ async def channel_link_handler(bot, message):
 				else:
 					
 					await message.edit_caption(link)
+					await message.reply_photo("https://telegra.ph/file")
+					await message.delete.()
 					
 					
-					
-					
-					
-
-		elif METHOD == "mdlink":
+		 	elif METHOD == "mdlink":
 
 			# reply markup - button post
 
