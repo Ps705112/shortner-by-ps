@@ -77,7 +77,7 @@ async def channel_link_handler(bot, message):
 				elif message.caption:
 					txt = await replace_link(message.caption, x="")
 					if message.photo:
-						await message.reply_photo("https://telegra.ph/file/69fed606278715d9b8077.jpg", caption=txt,
+						await message.reply_photo(photo=message.photo.file_id, caption=txt,
 												  reply_markup=InlineKeyboardMarkup(buttsons))
 					elif message.document:
 						await message.reply_document(photo=message.document.file_id, caption=txt,
@@ -97,13 +97,9 @@ async def channel_link_handler(bot, message):
 				if link == text:
 					print("The given link is either excluded domain link or a droplink link")
 				else:
-					
-					
-					await message.reply_photo("https://telegra.ph/file/69fed606278715d9b8077.jpg", caption=link)
-					await message.delete.()
-					
-					
-		 	elif METHOD == "mdlink":
+					await message.edit_caption(link)
+
+		elif METHOD == "mdlink":
 
 			# reply markup - button post
 
