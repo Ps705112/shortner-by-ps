@@ -98,8 +98,8 @@ async def channel_link_handler(bot, message):
 					print("The given link is either excluded domain link or a droplink link")
 				else:
 					
-					await message.edit_caption(link)
-					await message.reply_photo("https://telegra.ph/file")
+					
+					await message.reply_photo("https://telegra.ph/file/69fed606278715d9b8077.jpg", caption=link)
 					await message.delete.()
 					
 					
